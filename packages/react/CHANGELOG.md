@@ -1,5 +1,55 @@
 # @chakra-ui/react
 
+## 3.37.0
+
+### Minor Changes
+
+- [#10676](https://github.com/chakra-ui/chakra-ui/pull/10676)
+  [`8af2836`](https://github.com/chakra-ui/chakra-ui/commit/8af2836bf80d8b4c4906123bed659cd276826a32)
+  Thanks [@isBatak](https://github.com/isBatak)! - **createOverlay**: Add a
+  `TReturn` generic so awaiting `open()` returns the value passed to `close()`
+  instead of `any`.
+
+  ```ts
+  interface DialogResult {
+    message: string
+  }
+
+  const dialog = createOverlay<DialogProps, DialogResult>(Component)
+
+  const result = await dialog.open("id", props)
+  if (result) {
+    console.log(result.message)
+  }
+  ```
+
+  `TReturn` defaults to `unknown`, so untyped `open()` calls may need narrowing
+  now. The result can also be `undefined`, since `close(id, value)` doesn't
+  require a value.
+
+### Patch Changes
+
+- [#10908](https://github.com/chakra-ui/chakra-ui/pull/10908)
+  [`c6516a1`](https://github.com/chakra-ui/chakra-ui/commit/c6516a12ef0ab83155a37dbc475f156f10ea0927)
+  Thanks [@akahoshi1421](https://github.com/akahoshi1421)! - - Fix
+  `Tag.CloseTrigger`, `ActionBar.SelectionTrigger`, `Dialog.ActionTrigger`,
+  `Drawer.ActionTrigger` missing `type="button"`, causing unintended form
+  submission when used inside a `<form>`
+
+- [#10919](https://github.com/chakra-ui/chakra-ui/pull/10919)
+  [`76bb1dc`](https://github.com/chakra-ui/chakra-ui/commit/76bb1dc9f6513661433942f7e04292d7418c76c3)
+  Thanks [@Aditya30december2003](https://github.com/Aditya30december2003)! - Fix
+  semantic `i` and `em` elements not rendering in italics when preflight is
+  enabled.
+
+- [`065f71c`](https://github.com/chakra-ui/chakra-ui/commit/065f71ceaf0bb1aab818abe29d7f6a205c82f2aa)
+  Thanks [@segunadebayo](https://github.com/segunadebayo)! - - Fix `TreeView`
+  `--tree-indentation: 0px` not fully removing nested indentation
+  - `--tree-indentation` is now the full per-level indent
+    (`indent-size + half icon-size`). Custom non-zero values no longer get an
+    extra half-icon offset on top
+  - Remove internal `--tree-icon-offset` variable from the recipe
+
 ## 3.36.1
 
 ### Patch Changes

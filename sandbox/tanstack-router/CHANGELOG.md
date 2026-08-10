@@ -1,5 +1,16 @@
 # tanstack-router-ts
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies
+  [[`c6516a1`](https://github.com/chakra-ui/chakra-ui/commit/c6516a12ef0ab83155a37dbc475f156f10ea0927),
+  [`76bb1dc`](https://github.com/chakra-ui/chakra-ui/commit/76bb1dc9f6513661433942f7e04292d7418c76c3),
+  [`065f71c`](https://github.com/chakra-ui/chakra-ui/commit/065f71ceaf0bb1aab818abe29d7f6a205c82f2aa),
+  [`8af2836`](https://github.com/chakra-ui/chakra-ui/commit/8af2836bf80d8b4c4906123bed659cd276826a32)]:
+  - @chakra-ui/react@3.37.0
+
 ## 0.0.4
 
 ### Patch Changes
